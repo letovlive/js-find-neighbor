@@ -1,7 +1,6 @@
 (function(){
 
-    function generateMatrix(sizeX, sizeY){
-
+    function generateMatrix(sizeX, sizeY) {
         var array = [];
         for (var row = 0; row < sizeX; row += 1) {
             array[row] = [];
@@ -9,21 +8,23 @@
                 array[row][col] = Math.floor(Math.random() * 10);
             }
         }
+
         return array;
     }
 
     function findNeighbor(m, y, x) {
+
         console.log('Search neighbor [5][1] - (' + m[y][x] + ') in matrix: ');
         console.log(m);
-        var tmpArray = [];
-        var find = function(array, indexI, indexJ) {
+
+        var tmpArray = [],
+            find = function(array, indexI, indexJ) {
             var cols = array[0].length,
                 rows = array.length;
             for (var row = indexI - 1; row <= indexI + 1 && row <= rows; row += 1)
             {
                 for (var col =  indexJ - 1;  col <= indexJ + 1 && col <= cols; col += 1)
                 {
-
                     if ((y === row && x === col ) ||
                         (row === indexI - 1 && col === indexJ - 1) ||
                         (row === indexI - 1 && col === indexJ + 1) ||
@@ -52,9 +53,11 @@
                 }
             }
         };
+
         find(m, y, x);
     }
 
     var matrix = generateMatrix(7,7);
     findNeighbor(matrix, 5, 1);
+
 }());
