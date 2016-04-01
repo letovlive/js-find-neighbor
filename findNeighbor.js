@@ -13,7 +13,8 @@
     }
 
     function findNeighbor(m, y, x) {
-
+        console.log('Search neighbor [5][1] - (' + m[y][x] + ') in matrix: ');
+        console.log(m);
         var tmpArray = [];
         var find = function(array, indexI, indexJ) {
             var cols = array[0].length,
@@ -55,8 +56,5 @@
     }
 
     var matrix = generateMatrix(7,7);
-
-    console.log('Search neighbor [5][1] - (' + matrix[5][1] + ') in matrix: ');
-    console.log(matrix);
     findNeighbor(matrix, 5, 1);
 }());
